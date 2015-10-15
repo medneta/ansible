@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: medneta.eu
   sudo: true
 
   vars_files:
