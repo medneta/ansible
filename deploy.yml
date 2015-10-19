@@ -1,6 +1,20 @@
 ---
-- hosts: medneta.eu
+- hosts: all
   sudo: true
 
   vars_files:
     - secrets.yml
+
+  pre_tasks:
+    - name: Update Debian cache
+      apt: cache_valid_time=3600 update_cache=yes
+
+  roles:
+    - geerlingguy.git
+    - geerlingguy.php
+    - geerlingguy.php-mysql
+    - geerlingguy.composer
+    - geerlingguy.drush
+    - geerlingguy.mysql
+    - geerlingguy.drupal
+    - geerlingguy.apache
