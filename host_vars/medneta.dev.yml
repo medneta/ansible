@@ -1,0 +1,11 @@
+---
+drupal_core_version: "7.x"
+mysql_bind_address: '127.0.0.1'
+drupal_domain: "medneta.dev"
+drupal_core_path: "/var/www/{{ drupal_domain }}"
+
+drupal_include_web_vhost: false
+
+apache_vhosts:
+  - servername: "{{ drupal_domain }}"
+    documentroot: "{{ drupal_core_path }}"
